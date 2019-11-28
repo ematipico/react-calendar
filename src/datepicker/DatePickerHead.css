@@ -1,5 +1,17 @@
 .DatePicker__Head {
 	background-color: coral;
 	width: 100%;
-	height: 100%;
+	flex-grow: 1;
+}
+
+.DatePicker__Days {
+	display: flex;
+	flex-direction: row;
+}
+
+
+.DatePicker__DayName {
+	width: 40px;
+	height: 40px;
+	padding: 8px;
 }

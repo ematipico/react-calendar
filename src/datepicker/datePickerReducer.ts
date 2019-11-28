@@ -13,6 +13,9 @@ export interface DatePickerState extends DatePickerProps {
 	year?: number;
 
 	day?: number;
+
+	weekStart: number;
+
 }
 
 export const datePickerReducer: Reducer<DatePickerState, Action> = (state, action) => {
