@@ -1,6 +1,6 @@
-import React, { createContext, Dispatch, useContext, useReducer } from "react";
-import { DatePickerProps, DatePickerViews } from "./index";
-import { Action, datePickerReducer, DatePickerState } from "./datePickerReducer";
+import React, { createContext, Dispatch, useContext, useReducer } from 'react';
+import { DatePickerProps, DatePickerViews } from './index';
+import { Action, datePickerReducer, DatePickerState } from './datePickerReducer';
 
 export interface DatePickerContext extends DatePickerProps {
 	dispatch: Dispatch<Action>;
@@ -8,7 +8,7 @@ export interface DatePickerContext extends DatePickerProps {
 
 const DatePickerContext = createContext<DatePickerContext | null>(null);
 
-DatePickerContext.displayName = "DatePickerContext";
+DatePickerContext.displayName = 'DatePickerContext';
 
 export const DatePickerProvider: React.FunctionComponent<DatePickerProps> = props => {
 	const initialState: DatePickerState = Object.assign(
@@ -36,7 +36,7 @@ export const DatePickerProvider: React.FunctionComponent<DatePickerProps> = prop
 export const useDatePickerContext = () => {
 	const context = useContext(DatePickerContext);
 
-	if (!context) throw new Error("You must define the " + DatePickerContext.displayName);
+	if (!context) throw new Error('You must define the ' + DatePickerContext.displayName);
 
 	return context;
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export function DatePickerControls() {
 	return <div className="DatePicker__Controls">
@@ -11,5 +11,5 @@ export function DatePickerControls() {
 		<div>
 			<button type="button"></button>
 		</div>
-	</div>
+	</div>;
 }

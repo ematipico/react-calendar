@@ -1,6 +1,6 @@
-import {DatePickerViews} from "./index";
+import {DatePickerViews} from './index';
 
-export const CHANGE_VIEW = "@datepicker/changeView";
+export const CHANGE_VIEW = '@datepicker/changeView';
 
 
 export interface ChangeViewAction {
@@ -12,5 +12,5 @@ export function changeView(newView: DatePickerViews) {
 	return {
 		type: CHANGE_VIEW,
 		payload: newView
-	}
+	};
 }

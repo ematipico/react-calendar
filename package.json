@@ -1,0 +1,31 @@
+{
+	"name": "@ematipico/react-calendar",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "git@github.com:ematipico/react-calendar.git",
+	"author": "Emanuele Stoppa <my.burning@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"test": "jest",
+		"lint": "eslint --ext tsx,ts ./src",
+		"lint:fix": "eslint --ext tsx,ts ./src --fix"
+	},
+	"devDependencies": {
+		"@testing-library/react": "^9.3.2",
+		"@typescript-eslint/eslint-plugin": "^2.9.0",
+		"@typescript-eslint/parser": "^2.9.0",
+		"eslint": "^6.7.1",
+		"eslint-config-prettier": "^6.7.0",
+		"eslint-plugin-prettier": "^3.1.1",
+		"eslint-plugin-react": "^7.17.0",
+		"eslint-plugin-react-hooks": "^2.3.0",
+		"jest": "^24.9.0",
+		"prettier": "^1.19.1",
+		"react": "^16.12.0",
+		"react-dom": "^16.12.0",
+		"typescript": "^3.7.2"
+	},
+	"dependencies": {
+		"date-fns": "^2.8.1"
+	}
+}

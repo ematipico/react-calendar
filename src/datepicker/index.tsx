@@ -1,13 +1,13 @@
-import React from "react";
-import { DatePickerProvider } from "./DatePickerProvider";
-import { DatePickerWrapper } from "./DatePickerWrapper";
-import { DatePickerHead } from "./DatePickerHead";
-import { DatePickerBody } from "./DatePickerBody";
+import React from 'react';
+import { DatePickerProvider } from './DatePickerProvider';
+import { DatePickerWrapper } from './DatePickerWrapper';
+import { DatePickerHead } from './DatePickerHead';
+import { DatePickerBody } from './DatePickerBody';
 
 export enum DatePickerViews {
-	Days = "Days",
-	Months = "Months",
-	Years = "Years"
+	Days = 'Days',
+	Months = 'Months',
+	Years = 'Years'
 }
 
 export const Days = {
