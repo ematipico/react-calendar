@@ -1,3 +1,5 @@
+@import "../node_modules/normalize.css/normalize.css";
 @import "./datepicker/DatePickerWrapper.css";
 @import "./datepicker/DatePickerBody.css";
 @import "./datepicker/DatePickerHead.css";
+@import "./datepicker/DatePickerCell.css";

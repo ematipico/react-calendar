@@ -2,7 +2,7 @@ import React, { createContext, Dispatch, useContext, useReducer } from 'react';
 import { DatePickerProps, DatePickerViews } from './index';
 import { Action, datePickerReducer, DatePickerState } from './datePickerReducer';
 
-export interface DatePickerContext extends DatePickerProps {
+export interface DatePickerContext extends DatePickerState {
 	dispatch: Dispatch<Action>;
 }
 
@@ -15,7 +15,8 @@ export const DatePickerProvider: React.FunctionComponent<DatePickerProps> = prop
 		{},
 		{
 			weekStart: 1,
-			currentView: DatePickerViews.Days
+			currentView: DatePickerViews.Days,
+			currentDate: new Date()
 		},
 		props
 	);

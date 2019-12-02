@@ -50,7 +50,7 @@ export interface DatePickerProps {
 
 export default function DatePicker(props: DatePickerProps) {
 	return (
-		<DatePickerProvider>
+		<DatePickerProvider {...props}>
 			<DatePickerWrapper>
 				<DatePickerHead />
 				<DatePickerBody />

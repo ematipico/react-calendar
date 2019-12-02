@@ -1,31 +1,45 @@
 {
-	"name": "@ematipico/react-calendar",
-	"version": "1.0.0",
-	"main": "index.js",
-	"repository": "git@github.com:ematipico/react-calendar.git",
-	"author": "Emanuele Stoppa <my.burning@gmail.com>",
-	"license": "MIT",
-	"scripts": {
-		"test": "jest",
-		"lint": "eslint --ext tsx,ts ./src",
-		"lint:fix": "eslint --ext tsx,ts ./src --fix"
-	},
-	"devDependencies": {
-		"@testing-library/react": "^9.3.2",
-		"@typescript-eslint/eslint-plugin": "^2.9.0",
-		"@typescript-eslint/parser": "^2.9.0",
-		"eslint": "^6.7.1",
-		"eslint-config-prettier": "^6.7.0",
-		"eslint-plugin-prettier": "^3.1.1",
-		"eslint-plugin-react": "^7.17.0",
-		"eslint-plugin-react-hooks": "^2.3.0",
-		"jest": "^24.9.0",
-		"prettier": "^1.19.1",
-		"react": "^16.12.0",
-		"react-dom": "^16.12.0",
-		"typescript": "^3.7.2"
-	},
-	"dependencies": {
-		"date-fns": "^2.8.1"
-	}
+  "name": "@ematipico/react-calendar",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ematipico/react-calendar.git",
+  "author": "Emanuele Stoppa <my.burning@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --ext tsx,ts ./src",
+    "lint:fix": "eslint --ext tsx,ts ./src --fix",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@storybook/addon-actions": "^5.2.6",
+    "@storybook/addon-links": "^5.2.6",
+    "@storybook/addons": "^5.2.6",
+    "@storybook/react": "^5.2.6",
+    "@testing-library/react": "^9.3.2",
+    "@types/classnames": "^2.2.9",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.7.1",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-docgen-typescript-loader": "^3.6.0",
+    "react-dom": "^16.12.0",
+    "storybook": "^5.1.11",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "date-fns": "^2.8.1",
+    "normalize.css": "^8.0.1"
+  }
 }

@@ -1,3 +1,26 @@
-.DatePicker__Cell {
+.DatePicker__CellWrapper {
+	width: 40px;
+	height: 40px;
+	text-align: center;
 
+}
+
+.DatePicker__Cell {
+	width: 36px;
+	height: 36px;
+	cursor: pointer;
+	border: none;
+	padding: 0;
+	margin: 2px;
+
+}
+
+.DatePicker__Cell--disabled {
+	pointer-events: none;
+	color: #b1b1b1;
+}
+
+.DatePicker__Cell--today {
+	pointer-events: none;
+	color: #b1b1b1;
 }

@@ -12,9 +12,9 @@ export function DatePickerHead() {
 				<div className="DatePicker__Days">
 					{Object.keys(Days).map((dayName: string) => {
 						return (
-							<div key={dayName} className="DatePicker__DayName">
+							<abbr key={dayName} className="DatePicker__DayName">
 								{dayName.substr(0, 3)}
-							</div>
+							</abbr>
 						);
 					})}
 				</div>

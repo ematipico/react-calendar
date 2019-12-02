@@ -3,4 +3,13 @@
 	background-color: red;
 	width: 100%;
 	flex-grow: 10;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 2px;
 }
+
+.DatePicker__Row {
+	display: flex;
+	flex-direction: row;
+}
+

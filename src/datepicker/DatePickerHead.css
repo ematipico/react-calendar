@@ -1,7 +1,10 @@
+@import './DatePickerControls.css';
+
 .DatePicker__Head {
 	background-color: coral;
 	width: 100%;
 	flex-grow: 1;
+	padding: 2px;
 }
 
 .DatePicker__Days {
@@ -9,9 +12,10 @@
 	flex-direction: row;
 }
 
-
 .DatePicker__DayName {
 	width: 40px;
 	height: 40px;
-	padding: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

@@ -28,9 +28,13 @@ module.exports = {
 	},
 	plugins: ['react', '@typescript-eslint', 'prettier'],
 	rules: {
-		indent: ['error', 'tab'],
+		indent: ['error', 'tab', {
+			"SwitchCase": 1
+		}],
 		'linebreak-style': ['error', 'unix'],
 		quotes: ['error', 'single'],
-		semi: ['error', 'always']
+		semi: ['error', 'always'],
+		"@typescript-eslint/explicit-function-return-type": "off",
+
 	}
 };

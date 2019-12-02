@@ -1,7 +1,10 @@
 import React from 'react';
-import { useDatePickerContext } from './DatePickerProvider';
+import { DatePickerCurrentView } from './DatePickerCurrentView';
 
 export function DatePickerBody() {
-	const { currentView } = useDatePickerContext();
-	return <main className="DatePicker__Body" role="grid"></main>;
+	return (
+		<main className="DatePicker__Body" role="grid">
+			<DatePickerCurrentView />
+		</main>
+	);
 }
