@@ -1,11 +1,18 @@
 import { Reducer } from "react";
-import { DatePickerProps } from "./index";
+import { DatePickerProps, DatePickerViews } from "./index";
 import { CHANGE_VIEW, ChangeViewAction } from "./datePickerActions";
+
+type AllKeyOf<T> = T extends never ? never : keyof T;
+
+type NotPartial<T, K> = { [P in Extract<keyof T, K>]-?: T[P] };
+
+type WithRequiredProperties<T, K extends AllKeyOf<T>> = T extends never ? never : Omit<T, K> & NotPartial<T, K>;
 
 export interface Action {
 	type: string;
 	payload: any;
 }
+
 
 export interface DatePickerState extends DatePickerProps {
 	month?: number;
@@ -16,6 +23,13 @@ export interface DatePickerState extends DatePickerProps {
 
 	weekStart: number;
 
+	today: Date;
+
+	currentView: DatePickerViews;
+
+	currentDate: Date;
+
+	views: DatePickerViews[];
 }
 
 export const datePickerReducer: Reducer<DatePickerState, Action> = (state, action) => {
