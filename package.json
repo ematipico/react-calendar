@@ -7,7 +7,7 @@
 		"test": "jest",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
-		"build:css": "postcss ./src/index.css -d pkg/dist-src/",
+		"build:css": "postcss ./src/index.css -d pkg/dist-src/"
 	},
 	"repository": {
 		"type": "git",

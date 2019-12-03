@@ -13,7 +13,7 @@ import {
 	canMoveForward,
 	getDisabledDates, getNextView,
 	isAfterDay, isBeforeDay
-} from '../utils';
+} from '../utils/utils';
 
 
 export const useNextView = () => {

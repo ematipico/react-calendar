@@ -13,7 +13,7 @@ import {
 	setMonth,
 	setYear
 } from "date-fns";
-import { DatePickerViews } from "./datepicker";
+import { DatePickerViews } from "../datepicker";
 
 /**
  * It calculates the next view to render in the date picker
