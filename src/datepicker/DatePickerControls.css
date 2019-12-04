@@ -1,5 +1,13 @@
+.DatePicker__Control {
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+}
+
 .DatePicker__Controls {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
+
+

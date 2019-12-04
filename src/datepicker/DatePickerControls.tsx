@@ -51,13 +51,13 @@ export function DatePickerControls() {
 	return (
 		<div className="DatePicker__Controls">
 			<div>
-				<button type="button">{mainControl}</button>
+				<button type="button" className="DatePicker__Control">{mainControl}</button>
 			</div>
 			<div>
-				<button type="button" className="DatePicker__Previous" aria-label={previousLabel} onClick={onClickPrevious}>
+				<button type="button" className="DatePicker__Control DatePicker__Previous" aria-label={previousLabel} onClick={onClickPrevious}>
 					{'<-'}
 				</button>
-				<button type="button" className="DatePicker__Next" aria-label={nextLabel} onClick={onClickNext}>
+				<button type="button" className="DatePicker__Control DatePicker__Next" aria-label={nextLabel} onClick={onClickNext}>
 					{'->'}
 				</button>
 			</div>

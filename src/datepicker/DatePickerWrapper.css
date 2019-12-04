@@ -1,6 +1,6 @@
 .DatePicker {
 	width: 280px;
-	height: 300px;
+	min-height: 280px;
 	display: flex;
 	flex-direction: column;
 }
