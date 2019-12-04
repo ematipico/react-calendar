@@ -1,20 +1,17 @@
-import {
-	isAfter,
-	isBefore,
-	setMonth,
-	setYear
-} from 'date-fns';
+import { isAfter, isBefore, setMonth, setYear } from 'date-fns';
 import { useMemo } from 'react';
-import {useDatePickerContext} from "./DatePickerProvider";
+import { useDatePickerContext } from './DatePickerProvider';
 import {
-	calculateChosenDate, calculateFirstYearWindow,
+	calculateChosenDate,
+	calculateFirstYearWindow,
 	calculateIfDateIsSet,
 	canMoveBackwards,
 	canMoveForward,
-	getDisabledDates, getNextView,
-	isAfterDay, isBeforeDay
+	getDisabledDates,
+	getNextView,
+	isAfterDay,
+	isBeforeDay
 } from '../utils/utils';
-
 
 export const useNextView = () => {
 	const { views, currentView } = useDatePickerContext();
@@ -51,10 +48,8 @@ export const useDisabledMonth = (currentDate: Date): boolean => {
 
 	return useMemo(() => {
 		return (
-			(minDate &&
-				isBefore(currentDate, setYear(setMonth(currentDate, minDate.getMonth()), minDate.getFullYear()))) ||
-			(maxDate &&
-				isAfter(currentDate, setYear(setMonth(currentDate, maxDate.getMonth()), maxDate.getFullYear()))) ||
+			(minDate && isBefore(currentDate, setYear(setMonth(currentDate, minDate.getMonth()), minDate.getFullYear()))) ||
+			(maxDate && isAfter(currentDate, setYear(setMonth(currentDate, maxDate.getMonth()), maxDate.getFullYear()))) ||
 			getDisabledDates(currentDate, disabledDates, 'month') ||
 			(shouldDisableMonth ? shouldDisableMonth(currentDate) : false)
 		);
@@ -131,4 +126,3 @@ export const useCanMoveBackwards = () => {
 		return canMoveBackwards({ currentView, currentDate, minDate, today });
 	}, [currentDate, currentView, minDate, today]);
 };
->>>>>>> fd3d97552ce677ea3b9206311df3de9747c7ade0

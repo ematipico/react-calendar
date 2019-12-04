@@ -2,9 +2,9 @@ import { Reducer } from 'react';
 import { DatePickerProps, DatePickerViews } from './index';
 import { CHANGE_VIEW, ChangeViewAction, NEXT_MONTH, PREVIOUS_MONTH } from './datePickerActions';
 import addMonths from 'date-fns/addMonths';
-import { GO_TO_HOME, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT, MOVE_UP } from "./keyBoardActions";
-import { format } from "date-fns";
-import { calculateFirstYearWindow } from "../utils/utils";
+import { GO_TO_HOME, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT, MOVE_UP } from './keyBoardActions';
+import { format } from 'date-fns';
+import { calculateFirstYearWindow } from '../utils/utils';
 
 export interface Action {
 	type: string;
@@ -51,7 +51,7 @@ export const datePickerReducer: Reducer<DatePickerState, Action> = (state, actio
 			const { currentFocusedValue } = state;
 			return {
 				...state,
-				currentFocusedValue: parseInt(currentFocusedValue, 10) + 1 + ""
+				currentFocusedValue: parseInt(currentFocusedValue, 10) + 1 + ''
 			};
 		}
 
@@ -59,7 +59,7 @@ export const datePickerReducer: Reducer<DatePickerState, Action> = (state, actio
 			const { currentFocusedValue } = state;
 			return {
 				...state,
-				currentFocusedValue: parseInt(currentFocusedValue, 10) - 1 + ""
+				currentFocusedValue: parseInt(currentFocusedValue, 10) - 1 + ''
 			};
 		}
 
@@ -67,7 +67,7 @@ export const datePickerReducer: Reducer<DatePickerState, Action> = (state, actio
 			const { currentFocusedValue } = state;
 			return {
 				...state,
-				currentFocusedValue: parseInt(currentFocusedValue, 10) - 7 + ""
+				currentFocusedValue: parseInt(currentFocusedValue, 10) - 7 + ''
 			};
 		}
 
@@ -75,7 +75,7 @@ export const datePickerReducer: Reducer<DatePickerState, Action> = (state, actio
 			const { currentFocusedValue } = state;
 			return {
 				...state,
-				currentFocusedValue: parseInt(currentFocusedValue, 10) + 7 + ""
+				currentFocusedValue: parseInt(currentFocusedValue, 10) + 7 + ''
 			};
 		}
 
@@ -85,20 +85,20 @@ export const datePickerReducer: Reducer<DatePickerState, Action> = (state, actio
 				case DatePickerViews.Days: {
 					return {
 						...state,
-						currentFocusedValue: "1"
+						currentFocusedValue: '1'
 					};
 				}
 				case DatePickerViews.Months: {
 					return {
 						...state,
-						currentFocusedValue: format(new Date(currentDate.getFullYear(), 1), "MMM")
+						currentFocusedValue: format(new Date(currentDate.getFullYear(), 1), 'MMM')
 					};
 				}
 
 				case DatePickerViews.Years: {
 					return {
 						...state,
-						currentFocusedValue: format(calculateFirstYearWindow(currentDate, today), "yyyy")
+						currentFocusedValue: format(calculateFirstYearWindow(currentDate, today), 'yyyy')
 					};
 				}
 				default:

@@ -12,8 +12,8 @@ import {
 	setDate,
 	setMonth,
 	setYear
-} from "date-fns";
-import { DatePickerViews } from "../datepicker";
+} from 'date-fns';
+import { DatePickerViews } from '../datepicker';
 
 /**
  * It calculates the next view to render in the date picker
@@ -42,16 +42,16 @@ export function getNextView(views: DatePickerViews[], currentView: DatePickerVie
  * @param disabledDates
  * @param toCheck
  */
-export function getDisabledDates(currentDate: Date, disabledDates?: Array<Date | Interval>, toCheck?: "day" | "month" | "year"): boolean {
+export function getDisabledDates(currentDate: Date, disabledDates?: Array<Date | Interval>, toCheck?: 'day' | 'month' | 'year'): boolean {
 	let disabled = false;
 
 	if (!disabledDates) return disabled;
 
 	disabled = disabledDates.some(value => {
 		if (value instanceof Date) {
-			if (toCheck === "day") return isSameDay(value, currentDate);
-			if (toCheck === "month") return isSameMonth(value, currentDate);
-			if (toCheck === "year") return isSameYear(value, currentDate);
+			if (toCheck === 'day') return isSameDay(value, currentDate);
+			if (toCheck === 'month') return isSameMonth(value, currentDate);
+			if (toCheck === 'year') return isSameYear(value, currentDate);
 			return false;
 		} else {
 			return isWithinInterval(currentDate, value);
@@ -66,7 +66,7 @@ export function calculateIfDateIsSet(views: DatePickerViews[], day?: number, mon
 			return !!year;
 		} else if (view == DatePickerViews.Months) {
 			// months starts from zero, so 0 can't be used
-			return typeof month !== "undefined";
+			return typeof month !== 'undefined';
 		} else if (view == DatePickerViews.Days) {
 			return !!day;
 		} else {
@@ -134,9 +134,9 @@ export function calculateLastYearWindow(currentDate: Date, today: Date) {
 }
 
 export function calculateChosenDate(day?: number, month?: number, year?: number): Date | undefined {
-	if (day && typeof month !== "undefined" && year) {
+	if (day && typeof month !== 'undefined' && year) {
 		return new Date(year, month, day);
-	} else if (year && typeof month !== "undefined") {
+	} else if (year && typeof month !== 'undefined') {
 		return new Date(year, month);
 	} else if (year) {
 		return new Date(year);

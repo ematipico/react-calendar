@@ -1,8 +1,8 @@
-export const MOVE_RIGHT = "@datepicker/keyboard-moveRight";
-export const MOVE_LEFT = "@datepicker/keyboard-moveLeft";
-export const MOVE_UP = "@datepicker/keyboard-moveUp";
-export const MOVE_DOWN = "@datepicker/keyboard-moveDown";
-export const GO_TO_HOME = "@datepicker/keyboard-home";
+export const MOVE_RIGHT = '@datepicker/keyboard-moveRight';
+export const MOVE_LEFT = '@datepicker/keyboard-moveLeft';
+export const MOVE_UP = '@datepicker/keyboard-moveUp';
+export const MOVE_DOWN = '@datepicker/keyboard-moveDown';
+export const GO_TO_HOME = '@datepicker/keyboard-home';
 
 export interface MoveRightAction {
 	type: typeof MOVE_RIGHT;
