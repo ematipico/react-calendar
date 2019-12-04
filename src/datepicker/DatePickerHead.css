@@ -5,6 +5,7 @@
 	width: 100%;
 	flex-grow: 1;
 	padding: 2px;
+	height: 50px;
 }
 
 .DatePicker__Days {

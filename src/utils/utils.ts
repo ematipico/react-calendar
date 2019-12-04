@@ -37,7 +37,7 @@ export function getNextView(views: DatePickerViews[], currentView: DatePickerVie
 
 /**
  * Given a current date and an interval/array of dates, it returns a boolean
- * saying if that date should be disabled
+ * saying if that current date should be disabled
  * @param currentDate
  * @param disabledDates
  * @param toCheck
@@ -59,6 +59,11 @@ export function getDisabledDates(currentDate: Date, disabledDates?: Array<Date |
 	});
 	return disabled;
 }
+
+export const isSameCalendarDate = (firstDate: Date, secondDate: Date) => {
+	return isSameYear(firstDate, secondDate) && isSameMonth(firstDate, secondDate) && isSameDay(firstDate, secondDate);
+};
+
 
 export function calculateIfDateIsSet(views: DatePickerViews[], day?: number, month?: number, year?: number): boolean {
 	return views.every(view => {

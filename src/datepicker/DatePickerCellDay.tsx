@@ -5,6 +5,9 @@ import format from 'date-fns/format';
 import { useDatePickerContext } from './DatePickerProvider';
 import { Formats } from '../constants';
 import enGB from 'date-fns/locale/en-GB';
+import { useDisabledDay } from './hooks';
+import { isSameCalendarDate } from '../utils/utils';
+import { setDayDate } from './datePickerActions';
 
 interface Props {
 	date: Date;
@@ -16,16 +19,23 @@ const dayLabel = (date: Date) => {
 	});
 };
 
-export function DatePickerDayCell(props: Props) {
+export function DatePickerCellDay(props: Props) {
 	const { date } = props;
-	const { currentDate } = useDatePickerContext();
+	const { today, currentDate, dispatch } = useDatePickerContext();
+	const disabled = useDisabledDay(date);
 	const notSameMonth = !isSameMonth(date, currentDate);
 	const cellClass = classNames('DatePicker__Cell', {
-		'DatePicker__Cell--disabled': notSameMonth
+		'DatePicker__Cell--current': !disabled && isSameCalendarDate(today, date),
+		'DatePicker__Cell--disabled': disabled || notSameMonth
 	});
+
+	const onClick = () => {
+		dispatch(setDayDate(date));
+	};
+
 	return (
 		<div role="gridcell" className="DatePicker__CellWrapper">
-			<button disabled={notSameMonth} aria-label={dayLabel(date)} className={cellClass}>
+			<button disabled={disabled || notSameMonth} aria-label={dayLabel(date)} className={cellClass} onClick={onClick}>
 				{date.getDate()}
 			</button>
 		</div>

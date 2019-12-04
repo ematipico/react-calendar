@@ -1,12 +1,14 @@
 import React from 'react';
 import { useDatePickerContext } from './DatePickerProvider';
 import { DatePickerViews } from './index';
-import { nextMonth, previousMonth } from './datePickerActions';
+import {changeView, nextMonth, previousMonth} from './datePickerActions';
 import { Formats } from '../constants';
 import format from 'date-fns/format';
+import {useNextView} from "./hooks";
 
 export function DatePickerControls() {
 	const { currentView, dispatch, currentDate } = useDatePickerContext();
+	const nextView = useNextView();
 
 	let nextLabel: string;
 	let previousLabel: string;
@@ -51,7 +53,7 @@ export function DatePickerControls() {
 	return (
 		<div className="DatePicker__Controls">
 			<div>
-				<button type="button" className="DatePicker__Control">{mainControl}</button>
+				<button type="button" className="DatePicker__Control" onClick={() => dispatch(changeView(nextView))}>{mainControl}</button>
 			</div>
 			<div>
 				<button type="button" className="DatePicker__Control DatePicker__Previous" aria-label={previousLabel} onClick={onClickPrevious}>

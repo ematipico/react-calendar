@@ -1,9 +1,17 @@
 import { Reducer } from 'react';
 import { DatePickerProps, DatePickerViews } from './index';
-import { CHANGE_VIEW, ChangeViewAction, NEXT_MONTH, PREVIOUS_MONTH } from './datePickerActions';
+import {
+	CHANGE_VIEW,
+	ChangeViewAction,
+	NEXT_MONTH,
+	PREVIOUS_MONTH,
+	SET_DAY_DATE,
+	SET_MONTH_DATE,
+	SET_YEAR_DATE
+} from './datePickerActions';
 import addMonths from 'date-fns/addMonths';
 import { GO_TO_HOME, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT, MOVE_UP } from './keyBoardActions';
-import { format } from 'date-fns';
+import { format, setMonth, setYear } from 'date-fns';
 import { calculateFirstYearWindow } from '../utils/utils';
 
 export interface Action {
@@ -36,7 +44,7 @@ export interface DatePickerState extends DatePickerProps {
 }
 
 export const datePickerReducer: Reducer<DatePickerState, Action> = (state, action) => {
-	const { type } = action;
+	const { type, payload } = action;
 
 	switch (type) {
 		case CHANGE_VIEW: {
@@ -121,6 +129,43 @@ export const datePickerReducer: Reducer<DatePickerState, Action> = (state, actio
 			return {
 				...state,
 				currentDate: newCurrentDate
+			};
+		}
+
+		case SET_YEAR_DATE: {
+			const { date } = payload;
+
+			return {
+				...state,
+				year: date.getFullYear(),
+				currentDate: setYear(state.currentDate, date.getFullYear())
+			};
+		}
+
+		case SET_MONTH_DATE: {
+			const { date } = payload;
+			const year = state.year || date.getFullYear();
+			const month = date.getMonth();
+			return {
+				...state,
+				year,
+				month,
+				currentDate: setMonth(setYear(state.currentDate, year), month)
+			};
+		}
+
+		case SET_DAY_DATE: {
+			const { date } = payload;
+			const year = state.year || date.getFullYear();
+			// months starts from zero, so 0 can't be used
+			const month = typeof state.month !== 'undefined' ? state.month : date.getMonth();
+
+			return {
+				...state,
+				year,
+				month,
+				day: date.getDate(),
+				currentDate: setMonth(setYear(state.currentDate, year), month)
 			};
 		}
 

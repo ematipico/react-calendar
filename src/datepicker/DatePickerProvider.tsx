@@ -1,8 +1,8 @@
-import React, { createContext, Dispatch, useContext, useReducer } from 'react';
-import { DatePickerProps, DatePickerViews } from './index';
-import { Action, datePickerReducer, DatePickerState } from './datePickerReducer';
-import { KEY_NAMES } from '../constants';
-import { moveDown, moveLeft, moveRight, moveUp } from './keyBoardActions';
+import React, {createContext, Dispatch, useContext, useReducer} from 'react';
+import {DatePickerProps, DatePickerViews} from './index';
+import {Action, datePickerReducer, DatePickerState} from './datePickerReducer';
+import {KEY_NAMES} from '../constants';
+import {moveDown, moveLeft, moveRight, moveUp} from './keyBoardActions';
 
 interface HandleKeyPressPayload {
 	evt: React.KeyboardEvent;
@@ -27,7 +27,7 @@ export const DatePickerProvider: React.FunctionComponent<DatePickerProps> = prop
 			currentView: DatePickerViews.Days,
 			today: new Date(),
 			currentDate: new Date(),
-			views: [],
+			views: [DatePickerViews.Years, DatePickerViews.Months, DatePickerViews.Days],
 			currentFocusedValue: ''
 		},
 		props

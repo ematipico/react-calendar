@@ -4,8 +4,8 @@
 	width: 100%;
 	flex-grow: 10;
 	flex-direction: column;
-	justify-content: space-between;
 	padding: 2px;
+	min-height: 200px
 }
 
 .DatePicker__Row {

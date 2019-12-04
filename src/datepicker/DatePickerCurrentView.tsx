@@ -1,24 +1,34 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useDatePickerContext } from './DatePickerProvider';
 import { DatePickerViews } from './index';
-import { DatePickerDaysView } from './DatePickerDaysView';
-import { DatePickerMonthsView } from './DatePickerMonthsView';
-import { DatePickerYearsView } from './DatePickerYearsView';
+import { DatePickerViewDays } from './DatePickerViewDays';
+import { DatePickerViewMonths } from './DatePickerViewMonths';
+import { DatePickerViewYears } from './DatePickerViewYears';
+import {useChosenDate, useShouldSetDateValue} from "./hooks";
 
 export function DatePickerCurrentView() {
-	const { currentView } = useDatePickerContext();
+	const { currentView, onDateChosen } = useDatePickerContext();
+
+	const shouldSetValue = useShouldSetDateValue();
+	const chosenDate = useChosenDate();
+
+	useEffect(() => {
+		if (shouldSetValue === true && chosenDate) {
+			onDateChosen && onDateChosen(chosenDate);
+		}
+	}, [chosenDate, onDateChosen, shouldSetValue]);
 
 	switch (currentView) {
 		case DatePickerViews.Days: {
-			return <DatePickerDaysView />;
+			return <DatePickerViewDays />;
 		}
 		case DatePickerViews.Months: {
-			return <DatePickerMonthsView />;
+			return <DatePickerViewMonths />;
 		}
 		case DatePickerViews.Years: {
-			return <DatePickerYearsView />;
+			return <DatePickerViewYears />;
 		}
 		default:
-			return <DatePickerDaysView />;
+			return <DatePickerViewDays />;
 	}
 }

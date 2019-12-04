@@ -2,7 +2,10 @@
 	width: 40px;
 	height: 40px;
 	text-align: center;
+}
 
+.DatePicker__CellWrapper--wide {
+	width: 70px;
 }
 
 .DatePicker__Cell {
@@ -12,6 +15,10 @@
 	border: none;
 	padding: 0;
 	margin: 2px;
+}
+
+.DatePicker__Cell--wide {
+	width: 66px;
 
 }
 
