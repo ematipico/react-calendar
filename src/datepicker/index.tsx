@@ -20,7 +20,17 @@ export const Days = {
 	Saturday: 6
 };
 
+export type ShouldDisabled = (currentDate: Date) => boolean;
+export type OnDateChosen = (date: Date) => void;
+
+
 export interface DatePickerProps {
+
+	/**
+	 * Called when a date is chosen
+	 */
+	onDateChosen?: OnDateChosen;
+
 	/**
 	 *
 	 */
@@ -46,6 +56,29 @@ export interface DatePickerProps {
 	 *
 	 */
 	weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
+
+	/**
+	 * An array of dates to disable
+	 */
+	disabledDates?: Date[]
+
+	/**
+	 * It marks a specific cell month disabled or not.
+	 */
+	shouldDisableMonth?: ShouldDisabled;
+	/**
+	 * It marks a specific cell month disabled or not.
+	 */
+	shouldDisableYear?: ShouldDisabled;
+	/**
+	 * It marks a specific cell month disabled or not.
+	 */
+	shouldDisableDay?: ShouldDisabled;
+
+	/**
+	 * The list of views to support. By default it supports all of them: day, year and month
+	 */
+	views?: DatePickerViews[];
 }
 
 export default function DatePicker(props: DatePickerProps) {

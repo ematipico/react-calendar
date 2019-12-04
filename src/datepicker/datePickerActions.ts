@@ -3,7 +3,6 @@ import { DatePickerViews } from './index';
 export const CHANGE_VIEW = '@datepicker/changeView';
 export const NEXT_MONTH = '@datepicker/nextMonth';
 export const PREVIOUS_MONTH = '@datepicker/previousMonth';
-
 export interface ChangeViewAction {
 	type: typeof CHANGE_VIEW;
 	payload: DatePickerViews;

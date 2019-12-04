@@ -1,10 +1,11 @@
-import React from 'react';
-import { DatePicker } from '../src/index';
+import React from "react";
+import { DatePicker } from "../src";
+import "../src/index.css";
 
 export default {
-	title: 'Components|Datepicker'
+	title: "Components|Datepicker"
 };
 
-export const Default = () => {
+export const DefaultView = () => {
 	return <DatePicker />;
 };
