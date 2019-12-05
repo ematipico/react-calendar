@@ -4,10 +4,32 @@
 	background-color: transparent;
 }
 
+.DatePicker__ViewControl {
+	background-color: #00695f;
+	color: white;
+	padding: 4px 16px;
+	border-radius: 3px;
+}
+
 .DatePicker__Controls {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	padding: 4px 4px;
+
 }
 
+.DatePicker__Arrows {
+	width: 32px;
+	height: 32px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.DatePicker__Arrows:hover, .DatePicker__Arrows:focus {
+	background-color: #00695f;
+	border-radius: 50%;
+	color: white;
+}
 

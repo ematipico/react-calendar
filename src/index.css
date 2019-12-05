@@ -3,3 +3,7 @@
 @import "./datepicker/DatePickerBody.css";
 @import "./datepicker/DatePickerHead.css";
 @import "./datepicker/DatePickerCell.css";
+
+* {
+	box-sizing: border-box
+}

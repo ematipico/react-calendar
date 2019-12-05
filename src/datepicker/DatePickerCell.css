@@ -15,10 +15,15 @@
 	border: none;
 	padding: 0;
 	margin: 2px;
+	border-radius: 50%;
+	background-color: white;
 }
 
-.DatePicker__Cell:focus {
-	border: 1px solid blue;
+.DatePicker__Cell:focus, .DatePicker__Cell:hover {
+	/*border: 1px solid blue;*/
+	background-color: #ccc;
+	box-shadow: 1px 1px 10px -5px #ccc;
+
 }
 
 .DatePicker__Cell--wide {

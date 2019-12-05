@@ -1,11 +1,12 @@
 @import './DatePickerControls.css';
 
 .DatePicker__Head {
-	background-color: coral;
+	background-color: #009688;
 	width: 100%;
 	flex-grow: 1;
 	padding: 2px;
-	height: 50px;
+	height: 80px;
+	color: white;
 }
 
 .DatePicker__Days {

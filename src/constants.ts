@@ -4,6 +4,7 @@ export const KEY_NAMES = {
 	ARROW_LEFT: 'ArrowLeft',
 	ARROW_UP: 'ArrowUp',
 	ARROW_DOWN: 'ArrowDown',
+	TAB: 'Tab'
 };
 
 export const Formats = {

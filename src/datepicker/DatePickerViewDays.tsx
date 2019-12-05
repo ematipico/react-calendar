@@ -24,6 +24,19 @@ export function DatePickerViewDays() {
 
 	const onKeyPress: HandleKeyPress = ({ evt, maxCellNumber, cellNumber }) => {
 		switch (evt.key) {
+			case KEY_NAMES.TAB: {
+				if (evt.shiftKey) {
+					if (cellNumber - 1 > 0) {
+						dispatch(moveLeft());
+					}
+				} else {
+					if (cellNumber + 1 <= maxCellNumber) {
+						dispatch(moveRight());
+					}
+				}
+				break;
+
+			}
 			case KEY_NAMES.ARROW_RIGHT: {
 				if (cellNumber + 1 <= maxCellNumber) {
 					dispatch(moveRight());

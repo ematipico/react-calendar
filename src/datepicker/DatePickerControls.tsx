@@ -1,10 +1,10 @@
 import React from 'react';
 import { useDatePickerContext } from './DatePickerProvider';
 import { DatePickerViews } from './index';
-import {changeView, nextMonth, previousMonth} from './datePickerActions';
+import { changeView, nextMonth, previousMonth } from './datePickerActions';
 import { Formats } from '../constants';
 import format from 'date-fns/format';
-import {useNextView} from "./hooks";
+import { useNextView } from './hooks';
 
 export function DatePickerControls() {
 	const { currentView, dispatch, currentDate } = useDatePickerContext();
@@ -53,14 +53,47 @@ export function DatePickerControls() {
 	return (
 		<div className="DatePicker__Controls">
 			<div>
-				<button type="button" className="DatePicker__Control" onClick={() => dispatch(changeView(nextView))}>{mainControl}</button>
+				<button type="button" className="DatePicker__Control DatePicker__ViewControl" onClick={() => dispatch(changeView(nextView))}>
+					{mainControl}
+				</button>
 			</div>
 			<div>
-				<button type="button" className="DatePicker__Control DatePicker__Previous" aria-label={previousLabel} onClick={onClickPrevious}>
-					{'<-'}
+				<button
+					type="button"
+					className="DatePicker__Control DatePicker__Arrows DatePicker__Previous"
+					aria-label={previousLabel}
+					onClick={onClickPrevious}
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="32"
+						height="32"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth="2"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						className="feather feather-chevron-left"
+					>
+						<polyline points="15 18 9 12 15 6"></polyline>
+					</svg>
 				</button>
-				<button type="button" className="DatePicker__Control DatePicker__Next" aria-label={nextLabel} onClick={onClickNext}>
-					{'->'}
+				<button type="button" className="DatePicker__Control DatePicker__Arrows DatePicker__Next" aria-label={nextLabel} onClick={onClickNext}>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="32"
+						height="32"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						strokeWidth="2"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						className="feather feather-chevron-right"
+					>
+						<polyline points="9 18 15 12 9 6"></polyline>
+					</svg>
 				</button>
 			</div>
 		</div>
