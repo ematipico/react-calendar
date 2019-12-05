@@ -15,6 +15,8 @@ export function DatePickerControls() {
 	let onClickNext;
 	let onClickPrevious;
 	let mainControl: string;
+	// TODO: make it dynamic
+	let mainControlLabel: string = 'Go to the next view';
 	switch (currentView) {
 		case DatePickerViews.Days: {
 			nextLabel = 'Go to the next month';
@@ -53,7 +55,12 @@ export function DatePickerControls() {
 	return (
 		<div className="DatePicker__Controls">
 			<div>
-				<button type="button" className="DatePicker__Control DatePicker__ViewControl" onClick={() => dispatch(changeView(nextView))}>
+				<button
+					type="button"
+					aria-label={mainControlLabel}
+					className="DatePicker__Control DatePicker__ViewControl"
+					onClick={() => dispatch(changeView(nextView))}
+				>
 					{mainControl}
 				</button>
 			</div>
@@ -79,7 +86,12 @@ export function DatePickerControls() {
 						<polyline points="15 18 9 12 15 6"></polyline>
 					</svg>
 				</button>
-				<button type="button" className="DatePicker__Control DatePicker__Arrows DatePicker__Next" aria-label={nextLabel} onClick={onClickNext}>
+				<button
+					type="button"
+					className="DatePicker__Control DatePicker__Arrows DatePicker__Next"
+					aria-label={nextLabel}
+					onClick={onClickNext}
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="32"

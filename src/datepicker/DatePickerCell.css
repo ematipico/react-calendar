@@ -2,6 +2,12 @@
 	width: 40px;
 	height: 40px;
 	text-align: center;
+	padding: 2px;
+	border-radius: 50%;
+}
+
+.DatePicker__CellWrapper--is-today {
+	border: 1px solid #009688;
 }
 
 .DatePicker__CellWrapper--wide {
@@ -9,12 +15,11 @@
 }
 
 .DatePicker__Cell {
-	width: 36px;
-	height: 36px;
+	width: 34px;
+	height: 34px;
 	cursor: pointer;
 	border: none;
 	padding: 0;
-	margin: 2px;
 	border-radius: 50%;
 	background-color: white;
 }

@@ -7,7 +7,7 @@ import { Formats } from '../constants';
 import enGB from 'date-fns/locale/en-GB';
 import { useDisabledDay } from './hooks';
 import { isSameCalendarDate } from '../utils/utils';
-import {setDayDate, setFocusedCell} from './datePickerActions';
+import { setDayDate, setFocusedCell } from './datePickerActions';
 
 interface Props {
 	date: Date;
@@ -30,6 +30,10 @@ export function DatePickerCellDay(props: Props) {
 	const cellClass = classNames('DatePicker__Cell', {
 		'DatePicker__Cell--current': !disabled && isSameCalendarDate(today, date),
 		'DatePicker__Cell--disabled': disabled || notSameMonth
+	});
+
+	const wrapperClass = classNames('DatePicker__CellWrapper', {
+		'DatePicker__CellWrapper--is-today': isSameCalendarDate(date, today)
 	});
 	const button = useRef<HTMLButtonElement>(null);
 
@@ -55,7 +59,7 @@ export function DatePickerCellDay(props: Props) {
 	}, [currentFocusedValue]);
 
 	return (
-		<div role="gridcell" className="DatePicker__CellWrapper">
+		<div role="gridcell" className={wrapperClass}>
 			<button
 				disabled={disabled || notSameMonth}
 				aria-label={dayLabel(date)}
