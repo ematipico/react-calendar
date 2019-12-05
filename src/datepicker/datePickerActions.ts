@@ -6,6 +6,7 @@ export const PREVIOUS_MONTH = '@datepicker/previousMonth';
 export const SET_DAY_DATE = '@datepicker/setDayDate';
 export const SET_MONTH_DATE = '@datepicker/setMonthDate';
 export const SET_YEAR_DATE = '@datepicker/setYearDate';
+export const SET_FOCUSED_CELL = '@datepicker/setFocusedCell';
 
 export interface ChangeViewAction {
 	type: typeof CHANGE_VIEW;
@@ -38,6 +39,13 @@ export interface SetDayDateAction {
 	type: typeof SET_DAY_DATE;
 	payload: {
 		date: Date;
+	};
+}
+
+export interface SetFocusedValueAction {
+	type: typeof SET_FOCUSED_CELL;
+	payload: {
+		newFocusedValue: number
 	};
 }
 
@@ -78,5 +86,12 @@ export const setDayDate = (date: Date): SetDayDateAction => {
 	return {
 		type: SET_DAY_DATE,
 		payload: { date }
+	};
+};
+
+export const setFocusedCell = (newFocusedValue: number): SetFocusedValueAction => {
+	return {
+		type: SET_FOCUSED_CELL,
+		payload: {newFocusedValue}
 	};
 };

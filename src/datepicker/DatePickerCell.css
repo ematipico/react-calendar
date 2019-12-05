@@ -17,6 +17,10 @@
 	margin: 2px;
 }
 
+.DatePicker__Cell:focus {
+	border: 1px solid blue;
+}
+
 .DatePicker__Cell--wide {
 	width: 66px;
 

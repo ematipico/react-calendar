@@ -5,9 +5,9 @@ import {
 	ChangeViewAction,
 	NEXT_MONTH,
 	PREVIOUS_MONTH,
-	SET_DAY_DATE,
+	SET_DAY_DATE, SET_FOCUSED_CELL,
 	SET_MONTH_DATE,
-	SET_YEAR_DATE
+	SET_YEAR_DATE, SetFocusedValueAction
 } from './datePickerActions';
 import addMonths from 'date-fns/addMonths';
 import { GO_TO_HOME, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT, MOVE_UP } from './keyBoardActions';
@@ -40,7 +40,7 @@ export interface DatePickerState extends DatePickerProps {
 	xCoordinate?: number;
 	yCoordinate?: number;
 
-	currentFocusedValue: string;
+	currentFocusedValue: number;
 }
 
 export const datePickerReducer: Reducer<DatePickerState, Action> = (state, action) => {
@@ -59,7 +59,7 @@ export const datePickerReducer: Reducer<DatePickerState, Action> = (state, actio
 			const { currentFocusedValue } = state;
 			return {
 				...state,
-				currentFocusedValue: parseInt(currentFocusedValue, 10) + 1 + ''
+				currentFocusedValue: currentFocusedValue + 1
 			};
 		}
 
@@ -67,7 +67,7 @@ export const datePickerReducer: Reducer<DatePickerState, Action> = (state, actio
 			const { currentFocusedValue } = state;
 			return {
 				...state,
-				currentFocusedValue: parseInt(currentFocusedValue, 10) - 1 + ''
+				currentFocusedValue: currentFocusedValue - 1
 			};
 		}
 
@@ -75,7 +75,7 @@ export const datePickerReducer: Reducer<DatePickerState, Action> = (state, actio
 			const { currentFocusedValue } = state;
 			return {
 				...state,
-				currentFocusedValue: parseInt(currentFocusedValue, 10) - 7 + ''
+				currentFocusedValue: currentFocusedValue - 7
 			};
 		}
 
@@ -83,7 +83,7 @@ export const datePickerReducer: Reducer<DatePickerState, Action> = (state, actio
 			const { currentFocusedValue } = state;
 			return {
 				...state,
-				currentFocusedValue: parseInt(currentFocusedValue, 10) + 7 + ''
+				currentFocusedValue: currentFocusedValue + 7
 			};
 		}
 
@@ -93,20 +93,20 @@ export const datePickerReducer: Reducer<DatePickerState, Action> = (state, actio
 				case DatePickerViews.Days: {
 					return {
 						...state,
-						currentFocusedValue: '1'
+						currentFocusedValue: 1
 					};
 				}
 				case DatePickerViews.Months: {
 					return {
 						...state,
-						currentFocusedValue: format(new Date(currentDate.getFullYear(), 1), 'MMM')
+						currentFocusedValue: 1
 					};
 				}
 
 				case DatePickerViews.Years: {
 					return {
 						...state,
-						currentFocusedValue: format(calculateFirstYearWindow(currentDate, today), 'yyyy')
+						currentFocusedValue: 1
 					};
 				}
 				default:
@@ -167,6 +167,14 @@ export const datePickerReducer: Reducer<DatePickerState, Action> = (state, actio
 				day: date.getDate(),
 				currentDate: setMonth(setYear(state.currentDate, year), month)
 			};
+		}
+
+		case SET_FOCUSED_CELL: {
+			const { payload } = action as SetFocusedValueAction;
+			return {
+				...state,
+				currentFocusedValue: payload.newFocusedValue
+			}
 		}
 
 		default: {

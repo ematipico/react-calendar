@@ -1,8 +1,8 @@
 # React Calendar
 
-A modern react calendar, not only focused on days
+A set a modern components 
 
-## Usage
+## DatePicker
 
 ```jsx harmony
 import { DatePicker } from '@ematipico/react-calendar';
