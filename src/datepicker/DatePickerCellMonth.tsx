@@ -21,7 +21,7 @@ export const DatePickerCellMonth = (props: Props) => {
 
 	// by default, when the month date is created, we set the day as 1 (first day of the month)
 
-	const cellClass = classNames('DatePicker__Cell DatePicker__Cell--wide', {
+	const cellClass = classNames('DatePicker__Cell DatePicker__Cell--wide DatePicker__CellMonth', {
 		'DatePicker__Cell--current': !disabled && isSameCalendarDate(today, monthDate),
 		'DatePicker__Cell--disabled': disabled
 	});

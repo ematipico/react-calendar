@@ -1,3 +1,3 @@
-import DatePicker from './datepicker/index';
+import { DatePicker } from './datepicker/index';
 
 export { DatePicker };

@@ -12,14 +12,14 @@ export function DatePickerViewMonths() {
 	const rows = useRef(Array.from(Array(3)));
 	const cells = useRef(Array.from(Array(4)));
 	const [months, setMonths] = useState(
-		Array.from(Array(12)).map((noValue, index) => {
+		Array.from(Array(12)).map((_, index) => {
 			return new Date(currentDate.getFullYear(), index, 1);
 		})
 	);
 
 	useEffect(() => {
 		setMonths(
-			Array.from(Array(12)).map((noValue, index) => {
+			Array.from(Array(12)).map((_, index) => {
 				return new Date(currentDate.getFullYear(), index, 1);
 			})
 		);
@@ -34,10 +34,10 @@ export function DatePickerViewMonths() {
 
 	return (
 		<>
-			{rows.current.map((noValue, rowIndex) => {
+			{rows.current.map((_, rowIndex) => {
 				return (
 					<div key={rowIndex} className="DatePicker__Row" role="row">
-						{cells.current.map((noValue, cellIndex) => {
+						{cells.current.map((_, cellIndex) => {
 							return <DatePickerCellMonth key={cellIndex} monthDate={months[rowIndex * 4 + cellIndex]} />;
 						})}
 					</div>

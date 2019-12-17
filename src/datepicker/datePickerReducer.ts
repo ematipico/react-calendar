@@ -5,14 +5,15 @@ import {
 	ChangeViewAction,
 	NEXT_MONTH,
 	PREVIOUS_MONTH,
-	SET_DAY_DATE, SET_FOCUSED_CELL,
+	SET_DAY_DATE,
+	SET_FOCUSED_CELL,
 	SET_MONTH_DATE,
-	SET_YEAR_DATE, SetFocusedValueAction
+	SET_YEAR_DATE,
+	SetFocusedValueAction
 } from './datePickerActions';
 import addMonths from 'date-fns/addMonths';
 import { GO_TO_HOME, MOVE_DOWN, MOVE_LEFT, MOVE_RIGHT, MOVE_UP } from './keyBoardActions';
-import { format, setMonth, setYear } from 'date-fns';
-import { calculateFirstYearWindow } from '../utils/utils';
+import { setMonth, setYear } from 'date-fns';
 
 export interface Action {
 	type: string;
@@ -88,7 +89,7 @@ export const datePickerReducer: Reducer<DatePickerState, Action> = (state, actio
 		}
 
 		case GO_TO_HOME: {
-			const { currentDate, currentView, today } = state;
+			const { currentView } = state;
 			switch (currentView) {
 				case DatePickerViews.Days: {
 					return {
@@ -174,7 +175,7 @@ export const datePickerReducer: Reducer<DatePickerState, Action> = (state, actio
 			return {
 				...state,
 				currentFocusedValue: payload.newFocusedValue
-			}
+			};
 		}
 
 		default: {

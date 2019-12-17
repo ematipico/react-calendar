@@ -45,3 +45,7 @@
 	pointer-events: none;
 	color: #b1b1b1;
 }
+
+.DatePicker__CellYear, .DatePicker__CellMonth {
+	border-radius: 5px;
+}

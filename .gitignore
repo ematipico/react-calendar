@@ -37,3 +37,9 @@ yarn-error.log
 .idea/
 pkg/
 .awcache/
+*.log
+.rts2_cache_cjs
+.rts2_cache_esm
+.rts2_cache_umd
+.rts2_cache_system
+dist

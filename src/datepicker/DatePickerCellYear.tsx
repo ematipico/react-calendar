@@ -1,4 +1,4 @@
-import { format, isSameYear } from 'date-fns';
+import { format } from 'date-fns';
 import React from 'react';
 import classNames from 'classnames';
 import { useDatePickerContext } from './DatePickerProvider';
@@ -19,7 +19,7 @@ export const DatePickerCellYear = (props: Props) => {
 
 	const disabled = useDisabledYear(date);
 
-	const cellClass = classNames('DatePicker__Cell DatePicker__Cell--wide', {
+	const cellClass = classNames('DatePicker__Cell DatePicker__Cell--wide  DatePicker__CellYear', {
 		'DatePicker__Cell--current': !disabled && isSameCalendarDate(today, date),
 		'DatePicker__Cell--disabled': disabled
 	});

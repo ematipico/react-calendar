@@ -23,9 +23,7 @@ export const Days = {
 export type ShouldDisabled = (currentDate: Date) => boolean;
 export type OnDateChosen = (date: Date) => void;
 
-
 export interface DatePickerProps {
-
 	/**
 	 * Called when a date is chosen
 	 */
@@ -60,7 +58,7 @@ export interface DatePickerProps {
 	/**
 	 * An array of dates to disable
 	 */
-	disabledDates?: Date[]
+	disabledDates?: Date[];
 
 	/**
 	 * It marks a specific cell month disabled or not.
@@ -81,7 +79,7 @@ export interface DatePickerProps {
 	views?: DatePickerViews[];
 }
 
-export default function DatePicker(props: DatePickerProps) {
+export const DatePicker: React.FC<DatePickerProps> = (props: DatePickerProps) => {
 	return (
 		<DatePickerProvider {...props}>
 			<DatePickerWrapper>
@@ -90,4 +88,4 @@ export default function DatePicker(props: DatePickerProps) {
 			</DatePickerWrapper>
 		</DatePickerProvider>
 	);
-}
+};

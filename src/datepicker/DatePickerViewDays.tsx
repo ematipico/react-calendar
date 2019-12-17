@@ -35,7 +35,6 @@ export function DatePickerViewDays() {
 					}
 				}
 				break;
-
 			}
 			case KEY_NAMES.ARROW_RIGHT: {
 				if (cellNumber + 1 <= maxCellNumber) {
@@ -46,7 +45,6 @@ export function DatePickerViewDays() {
 			case KEY_NAMES.ARROW_DOWN: {
 				if (cellNumber + 7 <= maxCellNumber) {
 					dispatch(moveDown());
-
 				}
 				break;
 			}
@@ -57,7 +55,7 @@ export function DatePickerViewDays() {
 				break;
 			}
 			case KEY_NAMES.ARROW_UP: {
-				if (cellNumber - 7 <= maxCellNumber) {
+				if (cellNumber - 7 >= 1) {
 					dispatch(moveUp());
 				}
 				break;
@@ -70,7 +68,7 @@ export function DatePickerViewDays() {
 			{weeks.map((firstDayOfWeek: Date, weekIndex: number) => {
 				return (
 					<div className="DatePicker__Row" key={weekIndex}>
-						{days.map((day: number, dayIndex: number) => {
+						{days.map((day: number) => {
 							const currentDay = addDays(firstDayOfWeek, day);
 							return (
 								<DatePickerCellDay

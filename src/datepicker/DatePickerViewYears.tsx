@@ -23,10 +23,10 @@ export function DatePickerViewYears() {
 
 	return (
 		<Fragment>
-			{rows.current.map((noValue, rowIndex) => {
+			{rows.current.map((_, rowIndex) => {
 				return (
 					<div key={rowIndex} className="DatePicker__Row" role="row">
-						{cells.current.map((noValue, cellIndex) => {
+						{cells.current.map((_, cellIndex) => {
 							return <DatePickerCellYear key={cellIndex} date={addYears(firstDateYear, rowIndex * 4 + cellIndex)} />;
 						})}
 					</div>
