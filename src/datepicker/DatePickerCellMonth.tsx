@@ -5,6 +5,7 @@ import { useDatePickerContext } from './DatePickerProvider';
 import { useDisabledMonth } from './hooks';
 import { isSameCalendarDate } from '../utils/utils';
 import { setMonthDate } from './datePickerActions';
+import { Formats } from '../constants';
 
 export interface Props {
 	monthDate: Date;
@@ -28,8 +29,8 @@ export const DatePickerCellMonth = (props: Props) => {
 
 	return (
 		<div role="gridcell" className="DatePicker__CellWrapper DatePicker__CellWrapper--wide">
-			<button disabled={disabled} aria-label="" className={cellClass} onClick={onClick}>
-				{format(monthDate, 'MMM').toUpperCase()}
+			<button disabled={disabled} aria-label={format(monthDate, Formats.MMMM__YYYY)} className={cellClass} onClick={onClick}>
+				{format(monthDate, Formats.MMMM).toUpperCase()}
 			</button>
 		</div>
 	);

@@ -1,10 +1,10 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useDatePickerContext } from './DatePickerProvider';
 import { DatePickerViews } from './index';
 import { DatePickerViewDays } from './DatePickerViewDays';
 import { DatePickerViewMonths } from './DatePickerViewMonths';
 import { DatePickerViewYears } from './DatePickerViewYears';
-import {useChosenDate, useShouldSetDateValue} from "./hooks";
+import { useChosenDate, useShouldSetDateValue } from './hooks';
 
 export function DatePickerCurrentView() {
 	const { currentView, onDateChosen } = useDatePickerContext();

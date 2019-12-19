@@ -9,6 +9,6 @@ export const KEY_NAMES = {
 
 export const Formats = {
 	EEEE_MM_YYYY: 'EEEE, MMM yyyy',
+	MMMM__YYYY: 'MMMM, yyyy',
 	MMMM: 'MMMM'
 };
-

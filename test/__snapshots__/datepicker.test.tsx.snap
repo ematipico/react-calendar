@@ -1,0 +1,617 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Datepicker should render when a current date is passed 1`] = `
+<div
+  class="DatePicker"
+>
+  <header
+    class="DatePicker__Head"
+  >
+    <div
+      class="DatePicker__Controls"
+    >
+      <button
+        aria-label="Go to the next view"
+        class="DatePicker__Control DatePicker__ViewControl"
+        type="button"
+      >
+        December
+      </button>
+      <div>
+        <button
+          aria-label="Go to the previous month"
+          class="DatePicker__Control DatePicker__Arrows DatePicker__Previous"
+          type="button"
+        >
+          <svg
+            class="feather feather-chevron-left"
+            fill="none"
+            height="32"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              points="15 18 9 12 15 6"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="Go to the next month"
+          class="DatePicker__Control DatePicker__Arrows DatePicker__Next"
+          type="button"
+        >
+          <svg
+            class="feather feather-chevron-right"
+            fill="none"
+            height="32"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              points="9 18 15 12 9 6"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div
+      class="DatePicker__Days"
+    >
+      <abbr
+        aria-label="Sunday"
+        class="DatePicker__DayName"
+      >
+        Sun
+      </abbr>
+      <abbr
+        aria-label="Monday"
+        class="DatePicker__DayName"
+      >
+        Mon
+      </abbr>
+      <abbr
+        aria-label="Tuesday"
+        class="DatePicker__DayName"
+      >
+        Tue
+      </abbr>
+      <abbr
+        aria-label="Wednesday"
+        class="DatePicker__DayName"
+      >
+        Wed
+      </abbr>
+      <abbr
+        aria-label="Thursday"
+        class="DatePicker__DayName"
+      >
+        Thu
+      </abbr>
+      <abbr
+        aria-label="Friday"
+        class="DatePicker__DayName"
+      >
+        Fri
+      </abbr>
+      <abbr
+        aria-label="Saturday"
+        class="DatePicker__DayName"
+      >
+        Sat
+      </abbr>
+    </div>
+  </header>
+  <main
+    class="DatePicker__Body"
+    role="grid"
+  >
+    <div
+      class="DatePicker__Row"
+    >
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Monday, Nov 2018"
+          class="DatePicker__Cell DatePicker__Cell--disabled"
+          disabled=""
+        >
+          26
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Tuesday, Nov 2018"
+          class="DatePicker__Cell DatePicker__Cell--disabled"
+          disabled=""
+        >
+          27
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Wednesday, Nov 2018"
+          class="DatePicker__Cell DatePicker__Cell--disabled"
+          disabled=""
+        >
+          28
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Thursday, Nov 2018"
+          class="DatePicker__Cell DatePicker__Cell--disabled"
+          disabled=""
+        >
+          29
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Friday, Nov 2018"
+          class="DatePicker__Cell DatePicker__Cell--disabled"
+          disabled=""
+        >
+          30
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Saturday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          1
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Sunday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          2
+        </button>
+      </div>
+    </div>
+    <div
+      class="DatePicker__Row"
+    >
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Monday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          3
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Tuesday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          4
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Wednesday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          5
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Thursday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          6
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Friday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          7
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Saturday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          8
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Sunday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          9
+        </button>
+      </div>
+    </div>
+    <div
+      class="DatePicker__Row"
+    >
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Monday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          10
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Tuesday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          11
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Wednesday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          12
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Thursday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          13
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Friday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          14
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Saturday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          15
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Sunday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          16
+        </button>
+      </div>
+    </div>
+    <div
+      class="DatePicker__Row"
+    >
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Monday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          17
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Tuesday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          18
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Wednesday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          19
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Thursday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          20
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Friday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          21
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Saturday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          22
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Sunday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          23
+        </button>
+      </div>
+    </div>
+    <div
+      class="DatePicker__Row"
+    >
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Monday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          24
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Tuesday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          25
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Wednesday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          26
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Thursday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          27
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Friday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          28
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Saturday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          29
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Sunday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          30
+        </button>
+      </div>
+    </div>
+    <div
+      class="DatePicker__Row"
+    >
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Monday, Dec 2018"
+          class="DatePicker__Cell"
+        >
+          31
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Tuesday, Jan 2019"
+          class="DatePicker__Cell DatePicker__Cell--disabled"
+          disabled=""
+        >
+          1
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Wednesday, Jan 2019"
+          class="DatePicker__Cell DatePicker__Cell--disabled"
+          disabled=""
+        >
+          2
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Thursday, Jan 2019"
+          class="DatePicker__Cell DatePicker__Cell--disabled"
+          disabled=""
+        >
+          3
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Friday, Jan 2019"
+          class="DatePicker__Cell DatePicker__Cell--disabled"
+          disabled=""
+        >
+          4
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Saturday, Jan 2019"
+          class="DatePicker__Cell DatePicker__Cell--disabled"
+          disabled=""
+        >
+          5
+        </button>
+      </div>
+      <div
+        class="DatePicker__CellWrapper"
+        role="gridcell"
+      >
+        <button
+          aria-label="Sunday, Jan 2019"
+          class="DatePicker__Cell DatePicker__Cell--disabled"
+          disabled=""
+        >
+          6
+        </button>
+      </div>
+    </div>
+  </main>
+</div>
+`;

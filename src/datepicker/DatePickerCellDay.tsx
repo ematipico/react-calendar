@@ -50,13 +50,13 @@ export function DatePickerCellDay(props: Props) {
 		if (cellNumber === 1 && button.current) {
 			button.current.focus();
 		}
-	}, []);
+	}, [cellNumber]);
 
 	useEffect(() => {
 		if (cellNumber === currentFocusedValue && button.current) {
 			button.current.focus();
 		}
-	}, [currentFocusedValue]);
+	}, [cellNumber, currentFocusedValue]);
 
 	return (
 		<div role="gridcell" className={wrapperClass}>

@@ -6,14 +6,15 @@
 	"module": "dist/react-calendar.esm.js",
 	"typings": "dist/index.d.ts",
 	"scripts": {
-		"lint:fix": "eslint --ext tsx,ts ./src --fix",
+		"lint:fix": "eslint --ext tsx,ts ./src ./test --fix",
+		"lint:es": "eslint --ext tsx,ts ./src ./test",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
 		"build:css": "postcss ./src/index.css -d pkg/dist-src/",
 		"start": "tsdx watch",
 		"build": "tsdx build",
 		"test": "tsdx test --env=jsdom",
-		"lint": "tsdx lint"
+		"lint": "tsdx lint && yarn lint:es"
 	},
 	"repository": {
 		"type": "git",
@@ -26,10 +27,6 @@
 	},
 	"homepage": "https://github.com/ematipico/react-calendar#readme",
 	"devDependencies": {
-		"@babel/core": "^7.7.4",
-		"@babel/preset-env": "^7.7.4",
-		"@babel/preset-react": "^7.7.4",
-		"@babel/preset-typescript": "^7.7.4",
 		"@storybook/addon-actions": "^5.2.8",
 		"@storybook/addon-docs": "^5.2.8",
 		"@storybook/addon-links": "^5.2.8",

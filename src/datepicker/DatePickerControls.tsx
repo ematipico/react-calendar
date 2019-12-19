@@ -4,11 +4,14 @@ import { DatePickerViews } from './index';
 import { changeView, nextMonth, previousMonth } from './datePickerActions';
 import { Formats } from '../constants';
 import format from 'date-fns/format';
-import { useNextView } from './hooks';
+import { useFirstYear, useNextView } from './hooks';
+import { addYears } from 'date-fns';
 
 export function DatePickerControls() {
 	const { currentView, dispatch, currentDate } = useDatePickerContext();
+
 	const nextView = useNextView();
+	const firstYear = useFirstYear();
 
 	let nextLabel: string;
 	let previousLabel: string;
@@ -16,7 +19,7 @@ export function DatePickerControls() {
 	let onClickPrevious;
 	let mainControl: string;
 	// TODO: make it dynamic
-	let mainControlLabel: string = 'Go to the next view';
+	const mainControlLabel = 'Go to the next view';
 	switch (currentView) {
 		case DatePickerViews.Days: {
 			nextLabel = 'Go to the next month';
@@ -31,7 +34,7 @@ export function DatePickerControls() {
 			previousLabel = 'Go to the previous year';
 			onClickNext = () => dispatch(nextMonth());
 			onClickPrevious = () => dispatch(previousMonth());
-			mainControl = format(currentDate, Formats.MMMM);
+			mainControl = format(currentDate, 'yyyy');
 
 			break;
 		}
@@ -40,7 +43,7 @@ export function DatePickerControls() {
 			previousLabel = 'Go to the previous set of years';
 			onClickNext = () => dispatch(nextMonth());
 			onClickPrevious = () => dispatch(previousMonth());
-			mainControl = format(currentDate, Formats.MMMM);
+			mainControl = `${format(firstYear, 'yyyy')} - ${format(addYears(firstYear, 19), 'yyyy')}`;
 
 			break;
 		}
@@ -54,16 +57,14 @@ export function DatePickerControls() {
 
 	return (
 		<div className="DatePicker__Controls">
-			<div>
-				<button
-					type="button"
-					aria-label={mainControlLabel}
-					className="DatePicker__Control DatePicker__ViewControl"
-					onClick={() => dispatch(changeView(nextView))}
-				>
-					{mainControl}
-				</button>
-			</div>
+			<button
+				type="button"
+				aria-label={mainControlLabel}
+				className="DatePicker__Control DatePicker__ViewControl"
+				onClick={() => dispatch(changeView(nextView))}
+			>
+				{mainControl}
+			</button>
 			<div>
 				<button
 					type="button"

@@ -45,7 +45,7 @@ export interface SetDayDateAction {
 export interface SetFocusedValueAction {
 	type: typeof SET_FOCUSED_CELL;
 	payload: {
-		newFocusedValue: number
+		newFocusedValue: number;
 	};
 }
 
@@ -92,6 +92,6 @@ export const setDayDate = (date: Date): SetDayDateAction => {
 export const setFocusedCell = (newFocusedValue: number): SetFocusedValueAction => {
 	return {
 		type: SET_FOCUSED_CELL,
-		payload: {newFocusedValue}
+		payload: { newFocusedValue }
 	};
 };

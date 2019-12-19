@@ -36,13 +36,17 @@ export function getNextView(views: DatePickerViews[], currentView: DatePickerVie
 }
 
 /**
- * Given a current date and an interval/array of dates, it returns a boolean
+ * Given a current date and an array of dates/intervals, it returns a boolean
  * saying if that current date should be disabled
  * @param currentDate
  * @param disabledDates
  * @param toCheck
  */
-export function getDisabledDates(currentDate: Date, disabledDates?: Array<Date | Interval>, toCheck?: 'day' | 'month' | 'year'): boolean {
+export function shouldDateBeDisabled(
+	currentDate: Date,
+	disabledDates?: Array<Date | Interval>,
+	toCheck?: 'day' | 'month' | 'year'
+): boolean {
 	let disabled = false;
 
 	if (!disabledDates) return disabled;
@@ -64,15 +68,14 @@ export const isSameCalendarDate = (firstDate: Date, secondDate: Date) => {
 	return isSameYear(firstDate, secondDate) && isSameMonth(firstDate, secondDate) && isSameDay(firstDate, secondDate);
 };
 
-
 export function calculateIfDateIsSet(views: DatePickerViews[], day?: number, month?: number, year?: number): boolean {
 	return views.every(view => {
-		if (view == DatePickerViews.Years) {
+		if (view === DatePickerViews.Years) {
 			return !!year;
-		} else if (view == DatePickerViews.Months) {
+		} else if (view === DatePickerViews.Months) {
 			// months starts from zero, so 0 can't be used
 			return typeof month !== 'undefined';
-		} else if (view == DatePickerViews.Days) {
+		} else if (view === DatePickerViews.Days) {
 			return !!day;
 		} else {
 			return false;
@@ -138,7 +141,7 @@ export function calculateLastYearWindow(currentDate: Date, today: Date) {
 	}
 }
 
-export function calculateChosenDate(day?: number, month?: number, year?: number): Date | undefined {
+export function calculateChosenDate(year?: number, month?: number, day?: number): Date | undefined {
 	if (day && typeof month !== 'undefined' && year) {
 		return new Date(year, month, day);
 	} else if (year && typeof month !== 'undefined') {

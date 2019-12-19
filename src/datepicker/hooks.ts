@@ -7,7 +7,7 @@ import {
 	calculateIfDateIsSet,
 	canMoveBackwards,
 	canMoveForward,
-	getDisabledDates,
+	shouldDateBeDisabled,
 	getNextView,
 	isAfterDay,
 	isBeforeDay
@@ -31,7 +31,7 @@ export const useDisabledDay = (currentDate: Date): boolean => {
 		return (
 			(minDate && isBeforeDay(currentDate, minDate)) ||
 			(maxDate && isAfterDay(currentDate, maxDate)) ||
-			getDisabledDates(currentDate, disabledDates, 'day') ||
+			shouldDateBeDisabled(currentDate, disabledDates, 'day') ||
 			(shouldDisableDay ? shouldDisableDay(currentDate) : false)
 		);
 	}, [currentDate, disabledDates, maxDate, minDate, shouldDisableDay]);
@@ -50,7 +50,7 @@ export const useDisabledMonth = (currentDate: Date): boolean => {
 		return (
 			(minDate && isBefore(currentDate, setYear(setMonth(currentDate, minDate.getMonth()), minDate.getFullYear()))) ||
 			(maxDate && isAfter(currentDate, setYear(setMonth(currentDate, maxDate.getMonth()), maxDate.getFullYear()))) ||
-			getDisabledDates(currentDate, disabledDates, 'month') ||
+			shouldDateBeDisabled(currentDate, disabledDates, 'month') ||
 			(shouldDisableMonth ? shouldDisableMonth(currentDate) : false)
 		);
 	}, [currentDate, disabledDates, maxDate, minDate, shouldDisableMonth]);
@@ -69,7 +69,7 @@ export const useDisabledYear = (currentDate: Date): boolean => {
 		return (
 			(minDate && isBefore(currentDate, setYear(currentDate, minDate.getFullYear()))) ||
 			(maxDate && isAfter(currentDate, setYear(currentDate, maxDate.getFullYear()))) ||
-			getDisabledDates(currentDate, disabledDates, 'year') ||
+			shouldDateBeDisabled(currentDate, disabledDates, 'year') ||
 			(shouldDisableYear ? shouldDisableYear(currentDate) : false)
 		);
 	}, [currentDate, disabledDates, maxDate, minDate, shouldDisableYear]);
@@ -88,7 +88,7 @@ export const useShouldSetDateValue = (): boolean => {
  */
 export const useChosenDate = () => {
 	const { day, month, year } = useDatePickerContext();
-	return useMemo(() => calculateChosenDate(day, month, year), [day, month, year]);
+	return useMemo(() => calculateChosenDate(year, month, day), [day, month, year]);
 };
 
 /**
