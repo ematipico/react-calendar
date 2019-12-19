@@ -1,9 +1,15 @@
-@import "../node_modules/normalize.css/normalize.css";
-@import "./datepicker/DatePickerWrapper.css";
-@import "./datepicker/DatePickerBody.css";
-@import "./datepicker/DatePickerHead.css";
-@import "./datepicker/DatePickerCell.css";
+@import '../node_modules/normalize.css/normalize.css';
+@import './datepicker/DatePickerWrapper.css';
+@import './datepicker/DatePickerBody.css';
+@import './datepicker/DatePickerHead.css';
+@import './datepicker/DatePickerCell.css';
 
-* {
-	box-sizing: border-box
+.DatePicker > *,
+.DatePicker > * > *,
+.DatePicker > * > * > *,
+.DatePicker > * > * > * > *,
+.DatePicker > * > * > * > * > *,
+.DatePicker > * > * > * > * > * > *,
+.DatePicker > * > * > * > * > * > * > * {
+	box-sizing: border-box;
 }

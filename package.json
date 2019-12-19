@@ -10,9 +10,9 @@
 		"lint:es": "eslint --ext tsx,ts ./src ./test",
 		"storybook": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
-		"build:css": "postcss ./src/index.css -d pkg/dist-src/",
+		"build:css": "postcss ./src/index.css -d dist/",
 		"start": "tsdx watch",
-		"build": "tsdx build",
+		"build": "tsdx build --tsconfig tsconfig.prod.json --entry ./src/index.tsx && yarn build:css",
 		"test": "tsdx test --env=jsdom",
 		"lint": "tsdx lint && yarn lint:es"
 	},
